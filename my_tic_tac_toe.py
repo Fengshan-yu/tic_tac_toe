@@ -38,11 +38,9 @@ def enter_move(board):
     # The function accepts the board's current status, asks the user about their move,
     # checks the input, and updates the board according to the user's decision.
     global move
-    move = input("User: Please indicate your next move: ")
+    move = input("Please indicate your next move: ")
     board[board_dict[int(move)][0]][board_dict[int(move)][1]] = "O"
-    display.replace(f"int{move}", "O")
     del board_dict[int(move)]
-
 
 def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares;
@@ -52,7 +50,6 @@ def make_list_of_free_fields(board):
         if char.isdigit():
             free_board.append(int(char))
     return free_board
-
 
 def victory_for(board, sign):
     # The function analyzes the board's status in order to check if
@@ -68,13 +65,11 @@ def victory_for(board, sign):
         else:
             pass
 
-
 def draw_move(board):
     global step
     step = random.choice(make_list_of_free_fields(board))
     board[board_dict[int(step)][0]][board_dict[int(step)][1]] = "X"
     del board_dict[int(step)]
-
 
 print("Welcome to my game.")
 input("Please press enter to start")
