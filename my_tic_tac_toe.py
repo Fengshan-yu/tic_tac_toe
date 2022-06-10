@@ -24,7 +24,7 @@ display = """
 +-------+-------+-------+
 """
 
-board = np.array([["1", "2", "3"], [4, 5, 6], [7, 8, 9]])
+board = np.array([["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]])
 board_dict = {1: (0, 0), 2: (0, 1), 3: (0, 2), 4: (1, 0), 5: (1, 1), 6: (1, 2), 7: (2, 0), 8: (2, 1), 9: (2, 2)}
 
 
@@ -87,7 +87,6 @@ while len(board_dict) > 0:
         print("You won.")
         break
     else:
-        make_list_of_free_fields(display)
         draw_move(board)
         display = display.replace(f"{step}", "X")
         display_board(display)
