@@ -1,6 +1,3 @@
-# This is the very first program I wrote up since studying Python on November 10, 2021.
-# This is for my son, a first grader, to practise Math.
-
 
 import numpy as np
 
