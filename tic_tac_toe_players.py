@@ -17,15 +17,15 @@ display = """
 """
 
 board = np.array([["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]])
-board_dict = {1: (0, 0), 2: (0, 1), 3: (0, 2), 4: (1, 0), 5: (1, 1), 6: (1, 2), 7: (2, 0), 8: (2, 1), 9: (2, 2)}
+board_dict = {"1": (0, 0), "2": (0, 1), "3": (0, 2), "4": (1, 0), "5": (1, 1), "6": (1, 2), "7": (2, 0), "8": (2, 1), "9": (2, 2)}
 
 def enter_move(board):
     # The function accepts the board's current status, asks the user about their move,
     # checks the input, and updates the board according to the user's decision.
     global move
     move = input("Player 1: please indicate your next move: ")
-    board[board_dict[int(move)][0], board_dict[int(move)][1]] = f"{player_1}"
-    del board_dict[int(move)]
+    board[board_dict[move][0], board_dict[move][1]] = f"{player_1}"
+    del board_dict[move]
 
 def victory_for(board, sign):
     # The function analyzes the board's status in order to check if
@@ -45,8 +45,8 @@ def victory_for(board, sign):
 def draw_move(board):
     global step
     step = input("Player 2: please indicate your next move: ")
-    board[board_dict[int(step)][0], board_dict[int(step)][1]] = f"{player_2}"
-    del board_dict[int(step)]
+    board[board_dict[step][0], board_dict[step][1]] = f"{player_2}"
+    del board_dict[step]
 
 print("Welcome to my game.")
 input("Please press enter to start")
