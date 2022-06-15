@@ -53,8 +53,8 @@ def draw_move(board):
 print("Welcome to my game.")
 input("Please press enter to start")
 print(display)
-player_1 = input("Play 1, Please enter a character to use:")
-player_2 = input("Play 2, Please enter a character to use:")
+player_1 = input("Player 1, Please enter a character to use:")
+player_2 = input("Player 2, Please enter a character to use:")
 
 enter_move(board)
 display = display.replace(f"{move}", f"{player_1}")
