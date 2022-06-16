@@ -41,11 +41,7 @@ def victory_for(board, sign):
     [board[2][0], board[1][1], board[0][2]]]
 
     for line in lines:
-        elements = []
-        for elem in line:
-            if elem == sign:
-                elements.append(elem)
-        if len(elements) == 3:
+        if line == [sign, sign, sign]:
             return True
         else:
             pass
