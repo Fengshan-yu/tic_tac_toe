@@ -6,8 +6,6 @@ Created on Wed Mar  9 16:39:06 2022
 """
 
 import random
-import numpy as np
-
 display = """
 +-------+-------+-------+
 |       |       |       |
@@ -24,8 +22,8 @@ display = """
 +-------+-------+-------+
 """
 
-board = np.array([["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]])
-board_dict = {1: (0, 0), 2: (0, 1), 3: (0, 2), 4: (1, 0), 5: (1, 1), 6: (1, 2), 7: (2, 0), 8: (2, 1), 9: (2, 2)}
+board = [["1","2","3"],["4","5","6"],["7","8","9"]]
+board_dict = {1:(0,0),2:(0,1),3:(0,2),4:(1,0),5:(1,1),6:(1,2),7:(2,0),8:(2,1),9:(2,2)}
 
 
 def display_board(board):
@@ -54,7 +52,17 @@ def make_list_of_free_fields(board):
 def victory_for(board, sign):
     # The function analyzes the board's status in order to check if
     # the player using 'O's or 'X's has won the game
-    rows = [board[:, 0], board[:, 1], board[:, 2], board[0, :], board[1, :], board[2, :]]
+    rows = [
+        [board[0][0], board[1][0], board[2][0]],
+        [board[0][1], board[1][1], board[2][1]],
+        [board[0][2], board[1][2], board[2][2]],
+        [board[0][0], board[0][1], board[0][2]],
+        [board[1][0], board[1][1], board[1][2]],
+        [board[2][0], board[2][1], board[2][2]],
+        [board[0][0], board[1][1], board[2][2]],
+        [board[2][0], board[1][1], board[0][2]]
+    ]
+
     for row in rows:
         elements = []
         for elem in row:
