@@ -43,10 +43,7 @@ def enter_move(board):
 def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares;
     # the list consists of tuples, while each tuple is a pair of row and column numbers.
-    free_board = []
-    for char in display:
-        if char.isdigit():
-            free_board.append(int(char))
+    free_board = [int(char) for char in display if char.isdigit()]
     return free_board
 
 def victory_for(board, sign):
@@ -64,10 +61,7 @@ def victory_for(board, sign):
     ]
 
     for row in rows:
-        elements = []
-        for elem in row:
-            if elem == sign:
-                elements.append(elem)
+        elements = [elem for elem in row if elem==sign]
         if len(elements) == 3:
             return True
         else:
