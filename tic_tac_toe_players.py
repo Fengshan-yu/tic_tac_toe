@@ -34,12 +34,8 @@ def victory_for(board, sign):
     # the player using 'sign' has won the game
     lines = [board[:,0], board[:,1], board[:,2], board[0,:], board[1,:],
              board[2,:], board[[0,1,2],[0,1,2]], board[[2,1,0],[0,1,2]]]
-    for row in lines:
-        elements = []
-        for elem in row:
-            if elem == sign:
-                elements.append(elem)
-        if len(elements) == 3:
+    for line in lines:
+        if np.array_equal(line, np.full((3,), sign)):
             return True
         else:
             pass
